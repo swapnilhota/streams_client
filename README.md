@@ -1,4 +1,5 @@
 ## Streams App
 
 -> Based on the concept of twitch. <br>
--> using json-server <br>
+-> Built using React and Redux <br>
+-> using json-server which follows REST-ful conventions <br>

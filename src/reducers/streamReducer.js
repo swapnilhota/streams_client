@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export default (state = {}, action) => {
     switch (action.type) {
         case 'FETCH_STREAM':
@@ -6,6 +8,8 @@ export default (state = {}, action) => {
             return { ...state, [action.payload.id]: action.payload };
         case 'EDIT_STREAM':
             return { ...state, [action.payload.id]: action.payload };
+        case 'DELETE_STREAM':
+            return _.omit(state, action.payload);  //using lodash
         default:
             return state;
     }

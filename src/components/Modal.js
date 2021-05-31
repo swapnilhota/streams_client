@@ -5,7 +5,7 @@ import history from '../history';
 const Modal = (props) => {
     return ReactDOM.createPortal(
         <div onClick={() => history.push('/')} className="ui dimmer modals visible active">
-            <div className="ui standard modal visible active">
+            <div onClick={(e) => e.stopPropagation()} className="ui standard modal visible active">
                 <div className="header">
                     Delete Stream
                 </div>
@@ -25,3 +25,4 @@ const Modal = (props) => {
 export default Modal;
 
 //used for delete streams component
+// e.stopPropagation to avoid event bubble up

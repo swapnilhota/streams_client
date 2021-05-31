@@ -10,17 +10,18 @@ class StreamEdit extends React.Component {
     }
 
     onSubmit = (formValues) => {
-
+        console.log(formValues);
     }
 
     render() {
         if (!this.props.stream) {
             return <div>Loading...</div>
         }
+        //initialValues prop is detected by reduxForm and matches it with Field names
         return (
             <div>
                 <h3>Edit a Stream</h3>
-                <StreamForm onSubmit={this.onSubmit} />
+                <StreamForm initialValues={this.props.stream} onSubmit={this.onSubmit} />
             </div>
         );
     }

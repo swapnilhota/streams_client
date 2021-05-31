@@ -40,7 +40,9 @@ export const fetchStream = (id) => {
 
 export const editStream = (id, formValues) => {
     return async (dispatch) => {
-        const response = await streams.put(`/streams/${id}`, formValues);
+        //const response = await streams.put(`/streams/${id}`, formValues);
+        const response = await streams.patch(`/streams/${id}`, formValues);
+        //put - update all properties of a record || patch - update some properties of a record
         dispatch({ type: 'EDIT_STREAM', payload: response.data });
         //navigate back to root route
         history.push('/');

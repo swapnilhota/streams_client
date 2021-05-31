@@ -42,6 +42,8 @@ export const editStream = (id, formValues) => {
     return async (dispatch) => {
         const response = await streams.put(`/streams/${id}`, formValues);
         dispatch({ type: 'EDIT_STREAM', payload: response.data });
+        //navigate back to root route
+        history.push('/');
     }
 }
 

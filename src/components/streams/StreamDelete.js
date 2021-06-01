@@ -1,8 +1,14 @@
 import React from 'react';
 import Modal from '../Modal';
 import history from '../../history';
+import { connect } from 'react-redux';
+import { deleteStream, fetchStream } from '../../actions';
 
 class StreamDelete extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchStream(this.props.match.params.id)
+    }
 
     renderActions() {
         return (
@@ -28,4 +34,8 @@ class StreamDelete extends React.Component {
     }
 }
 
-export default StreamDelete;
+const mapStateToProps = (state) => {
+
+}
+
+export default connect(null, { fetchStream })(StreamDelete);

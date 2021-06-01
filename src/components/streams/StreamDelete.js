@@ -5,7 +5,9 @@ const StreamDelete = () => {
     return (
         <div>
             StreamDelete
-            <Modal />
+            <Modal
+                title="Delete Stream"
+            />
         </div>
     );
 }
